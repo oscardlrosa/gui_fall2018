@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" href="css/a6.css" type="text/css">
+    <title>Assignment No. 6 - Interactive Dynamic Table</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="content">
+      <div class="instructions">
+        <h1>A6: Got Math?</h1>
+        <h4>Instructions:</h4>
+        <p>Write numbers in the correct order <br>and feel the power of math.</p>
+      </div>
+
+      <form id="input">
+        <p>Integer stars:</p><input type="text" name="rowStart" id="rowStart" placeholder="Enter smaller number" onkeyup="return validateInput(this, event)">
+        <p>Integer ends:</p> <input type="text" name="rowEnd" id="rowEnd" placeholder="Enter larger number" onkeyup="return validateInput(this, event)">
+        <p>Integer stars:</p> <input type="text" name="colStart" id="colStart"  placeholder="Enter smaller number" onkeyup="return validateInput(this, event)">
+        <p>Integer ends:</p> <input type="text" name="colEnd" id="colEnd"  placeholder="Enter larger number" onkeyup="return validateInput(this, event)">
+      </form>
+      <br>
+      <div id="generate">
+        <button onclick="makeTable()" type="button">Submit</button>
+      </div>
+      <div id="destroy">
+        <button onclick="clearForm()" type="button">Clear</button>
+      </div>
+      <div id="ghostTable"></div>
+    </div> <!-- content-wrapper -->
+    <script src="js/a6.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
