@@ -1,47 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!--
+  Oscar De La Rosa - Assignment 7
+  Oscar_DeLaRosa@student.uml.edu
+
+-->
+<html lang="en-US" dir="ltr">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
     <meta name="HandheldFriendly" content="true"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/a7.css" type="text/css">
-    <title>Assignment No. 7 - Using the jQuery Validation Plugin with Your Dynamic Table</title>
+    <title>Assignment No. 7 - jQueryfied</title>
   </head>
   <body>
-    <div class="bg"></div>
-    <div class="content">
-      <div class="instructions">
-        <h1>A7: jQueryfied</h1>
-        <h4>Instructions:</h4>
-        <p>Write numbers in the correct order, smaller to largest, <br>and feel the power of math and jQuery for validation.</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="titleAssignment">Assignment 7</h1>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 cent">
+          <mark>Enter the number below,<br> -10 to 10, <br>to generate a multiplication table.<mark>
+        </div>
+        <div class="col-md-3"></div>
       </div>
 
-      <form id="input" name="input" method="GET">
-        <label for="rowStart">
-          <p>Integer stars:</p><input type="number" name="rowStart" id="rowStart" value="0" required>
-        </label>
-        <label for="rowEnd">
-          <p>Integer ends:</p><input type="number" name="rowEnd" id="rowEnd" value="0" required>
-        </label>
-        <label for="colStart">
-          <p>Integer stars:</p><input type="number" name="colStart" id="colStart" value="0" required>
-        </label>
-        <label for="colEnd">
-          <p>Integer ends:</p><input type="number" name="colEnd" id="colEnd" value="0" required>
-        </label>
-      </form>
       <br>
-      <div>
-        <input type="submit" onclick="makeTable()" value="Submit">
-        <input type="submit" onclick="clearForm() " id="destroy" value="Clear">
+
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <div class="centMarg">
+            <form id="multTable" name="multTable" method="post">
+              <div>
+                <label>Start row number: </label>
+                <input type="number" id="rowStart" name="rowStart" value="0" required>
+              </div>
+              <div>
+                <label>End row number: </label>
+                <input type="number" id="rowEnd" name="rowEnd" value="0" required>
+              </div>
+              <div>
+                <label>Start column number: </label>
+                <input type="number" id="colStart" name="colStart" value="0" required>
+              </div>
+              <div>
+                <label>End colum number: </label>
+                <input type="number" id="colEnd" name="colEnd" value="0" required>
+              </div>
+
+              <input id="buttonSubmit" type="submit" onClick="makeTable()" value="Create Table">
+            </form>
+
+            <div id="warningMsg" class="bg-warning"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="ghostTable"></div>
+        </div>
+        <div class="col-md-1"></div>
       </div>
-      <div id="warningMsg"></div>
-      <div id="ghostTable"></div>
-    </div> <!-- content-wrapper -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+      <br><br><br>
+
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
-    <script type="text/javascript" src="js/a7.js"</script>
+    <script type="text/javascript" src="js/a7.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        validate();      // Runs the validate code as soon as the body is ready.
+      });
+    </script>
   </body>
 </html>
