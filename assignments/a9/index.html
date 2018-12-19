@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!--
+  Assingment 9 - Scrabble with Drag-and-Drop
+  COMP.4610: GUI Programming
+  Oscar De La Rosa
+  Oscar_DeLaRosa@student.uml.edu
+  Assist: https://jqueryui.com/draggable/
+          https://jqueryui.com/droppable/
+          W3 schools for some CSS
+-->
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Advent+Pro%7CBangers%7CSlackey%7CSigmar+One%7CRighteous%7CUbuntu">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/a9.css">
+    <title>Assignment 9</title>
+  </head>
+  <body>
+    <!-- Title -->
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="name">
+          <span class="title">Scrabble</span>
+        </h1>
+      </div>
+    </div>
+    <br>
+
+    <!-- Scrabble game board -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cTxtImgs">
+          <img class="resizeBoard" id="the_board" src="img/Scrabble_Board_OneLine.png">
+          <div id="board"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scoring -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="hCentered">Word: <span id="word">____</span> </div>
+        <div class="hCentered">Score: <span id="score">0</span> </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <br><br>
+
+    <!-- Scrabble pieces -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cTxtImgs">
+          <img class="resizeRack" id="the_rack" src="img/Scrabble_Rack_flat.png">
+          <div id="rack"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>          <!-- End div of the main container. -->
+
+
+
+    <!-- All libraries + JS that handles droppable and load of pieces -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <script src="js/a9.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      loadScrabblePieces();     // Load Scrabble pieces.
+      loadDroppableTargets();   // Load targets for the Scrabble pieces.
+    });
+    </script>
+  </body>
+</html>

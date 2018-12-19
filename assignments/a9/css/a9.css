@@ -1,0 +1,98 @@
+/*
+  Assingment 9 - Scrabble with Drag-and-Drop
+  COMP.4610: GUI Programming
+  Oscar De La Rosa
+  Oscar_DeLaRosa@student.uml.edu
+*/
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  font-family: "Advent Pro";
+}
+
+body > .container {
+  padding: 65px 10px 0;
+}
+
+body > .row {
+  margin: 10px;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.cTxtImgs {
+  margin: auto;
+  text-align: center;
+}
+
+.resizeBoard {
+  height: 125px;
+  width: auto;
+}
+
+.resizeRack {
+  height: 125px;
+  width: 1200px;
+}
+
+.pieces {
+  height: 100px;
+  width: 100px;
+}
+
+.droppable {
+  height: 125px;
+  width: 118px;
+}
+
+button {
+  color: black;
+  font-family: "Advent Pro";
+  font-size: 150%;
+  font-weight: 900;
+  text-align: center;
+  height: 75px;
+  width: 200px;
+}
+
+.title {
+  background-color: #0000FF;
+  color: #00004c;
+  font-family: "Sofia";
+  font-size: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+h1.name {
+  color: white;
+  font-family: "Ubuntu";
+  font-size: 750%;
+  text-align: center;
+}
+
+.hCentered {
+  background-color: black;
+  color: white;
+  font-family: "Advent Pro";
+  font-size: 200%;
+  font-weight: 900;
+  text-align: center;
+}
